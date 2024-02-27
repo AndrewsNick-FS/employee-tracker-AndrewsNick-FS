@@ -5,7 +5,7 @@ class Main {
     this.employees = [
       new Manager("Malcolm", 30, 10),
       new PartTime("Kaylee", 25, 8),
-      new Manager("Shephard", 35, 12),
+      new Manager("Shephard", 55, 12),
     ];
   }
 
@@ -80,7 +80,7 @@ class Main {
 
   // Display Employees
   displayEmployees() {
-    console.log("Bob's Burger Joint");
+    console.log("Serenity Cafe");
     console.log("ID\tName\tAge\tSalary\tHrs\tPay\tType");
 
     this.employees.forEach((employee, index) => {
@@ -148,7 +148,12 @@ class Manager extends Employee {
 
   while (true) {
     main.displayMenu();
-    const choice = prompt("Enter your choice (1-4):");
+    const choice = prompt("Enter your choice (1-4), or press Cancel to exit:");
+
+    if (choice == -null) {
+      console.log("Exiting the program. Goodbye!");
+      break;
+    }
 
     switch (choice) {
       case "1":
@@ -165,6 +170,7 @@ class Manager extends Employee {
         break;
       default:
         console.log("Invalid choice. Please enter a number between 1 and 4.");
+        console.clear();
     }
   }
 })();
