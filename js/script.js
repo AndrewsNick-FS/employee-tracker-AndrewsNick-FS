@@ -153,7 +153,9 @@ class Manager extends Employee {
 
   while (true) {
     main.displayMenu();
-    const choice = prompt("Enter your choice (1-4), or press Cancel to exit:");
+    const choice = prompt(
+      "Main Menu \n 1. Add Employee \n 2. Remove Employee \n 3. Edit Employee \n 4. Display Employees \n \n Enter your choice (1-4), or press Cancel to exit:"
+    );
 
     if (choice == -null) {
       console.log("Exiting the program. Goodbye!");
@@ -176,6 +178,7 @@ class Manager extends Employee {
       default:
         console.log("Invalid choice. Please enter a number between 1 and 4.");
         console.clear();
+        console.log("Console Cleared");
     }
   }
 })();
