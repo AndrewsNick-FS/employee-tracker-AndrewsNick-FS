@@ -3,9 +3,9 @@ class Main {
   constructor() {
     // Hardcoded initial employees
     this.employees = [
-      new Manager("Malcolm", 30, 10),
-      new PartTime("Kaylee", 25, 8),
-      new Manager("Shephard", 55, 12),
+      new Manager("Malcolm", 34, 10, 40),
+      new PartTime("Inara", 31, 9, 30),
+      new Manager("Kaylee", 27, 12, 40),
     ];
   }
 
@@ -114,6 +114,11 @@ class PartTime extends Employee {
 
   displayInfo() {
     return `${this.name}\t${this.age}\t${this.annualSalary}\t${this.hours}\t${this.payRate}\t${this.employeeType}`;
+  }
+  // Additional method to edit pay rate for Part Timer
+  editPayRate(newPayRate) {
+    this.payRate = newPayRate;
+    this.calculatePay();
   }
 }
 
